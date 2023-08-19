@@ -19,4 +19,10 @@ public class DockerjenkintegrstionApplication {
 		
 	}
 
+	
+	@GetMapping("/message")
+	public String inba1() {
+		return "deploying the project in gitactoin";
+		
+	}
 }
