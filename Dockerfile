@@ -1,4 +1,4 @@
 FROM openjdk:17-oracle
 EXPOSE 8080
-ADD target/dockerjenkintegrstion.jar dockerjenkintegrstion.jar 
-ENTRYPOINT ["java","-jar","/dockerjenkintegrstion.jar"]
+ADD target/serverdeployed.jar serverdeployed.jar 
+ENTRYPOINT ["java","-jar","/serverdeployed.jar"]
