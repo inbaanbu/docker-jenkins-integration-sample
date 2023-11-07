@@ -20,7 +20,7 @@ jobs:
       - name: Login to docker hub
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
-         image: inbaanbu1998/dockerjenkintegrstion
+         image: inbaanbu1998/serverdeployed
          tags: latest
          registry: docker.io
          dockerfile: Dockerfile
