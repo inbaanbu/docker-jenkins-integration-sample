@@ -21,6 +21,6 @@ jobs:
         run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
       - name: Build docker image
         run: docker build -t inbaanbu1998/serverdeployed .
-         working-directory:./dockerjenkintegrstion/Dockerfile
+         working-directory:./docker-jenkins-integration-sample/Dockerfile
       - name: Publish image to docker hub
         run: docker push inbaanbu1998/serverdeployed
