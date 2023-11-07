@@ -46,7 +46,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-				<finalName>dockerjenkintegrstion</finalName>
+				<finalName>serverdeployed</finalName>
 		
 	</build>
 
