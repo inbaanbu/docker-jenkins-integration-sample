@@ -22,4 +22,4 @@ jobs:
       - name: Build docker image
         run: docker build -t inbaanbu1998/serverdeployed .
       - name: Publish image to docker hub
-        run: docker push inbaanbu1998/serverdeployed:latest
+        run: docker push inbaanbu1998/serverdeployed
