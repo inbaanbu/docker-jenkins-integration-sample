@@ -19,8 +19,11 @@ jobs:
         run: mvn clean install -DskipTests
       - name: Login to docker hub
         run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
+      - name: docker build image
+        run: docker build .
       - name: Build docker image
         run: docker build -t inbaanbu1998/serverdeployed .
-         working-directory:./docker-jenkins-integration-sample/Dockerfile
+      - name: tag to docker hub
+        run: docker tag serverdeployed inbaanbu1998/serverdeployed
       - name: Publish image to docker hub
         run: docker push inbaanbu1998/serverdeployed
