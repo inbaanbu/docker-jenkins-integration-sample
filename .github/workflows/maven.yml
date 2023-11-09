@@ -17,14 +17,12 @@ jobs:
           java-version: '17'
       - name: Build Project
         run: mvn clean install -DskipTests
-      - name: Login to docker hub
-        run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
-      - name: docker build
-        run: docker build .
-      - name: Build docker image
-        run: docker build -t inbaanbu1998/serverdeployed .
-      - name: docker image tag
-        run: docker tag serverdeployed inbaanbu1998/serverdeployed
-         working-directory:./main/Dockerfile
-      - name: Publish image to docker hub
-        run: docker push inbaanbu1998/serverdeployed
+      - name: Build & push Docker image
+        uses: mr-smithers-excellent/docker-build-push@v5
+        with:
+          image: inbaanbu1998/serverdeployed
+          tags: latest
+          registry: docker.io
+          dockerfile: Dockerfile
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
