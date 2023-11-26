@@ -40,3 +40,13 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: inbaanbu1998/serverdeployed:latest
+  deploy:
+    needs: build
+    runs-on: [aws-ec2]
+    steps:
+      - name: Pull Image from docker hub
+        run: sudo docker pull inbaanbu1998/serverdeployed:latest
+      - name: Delete old container
+        run: sudo docker rm -f inbaanbu1998
+      - name: Run Docker Image
+        run: sudo docker run -d -p 8080:8080 --name inbaanbu1998/serverdeployed
