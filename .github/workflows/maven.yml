@@ -39,4 +39,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}inbaanbu1998/serverdeployed:latest
+        tags: inbaanbu1998/serverdeployed:latest
